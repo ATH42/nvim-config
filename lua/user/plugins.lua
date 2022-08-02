@@ -37,7 +37,8 @@ packer.init {
     end,
   },
 }
-
+-- code formats on save
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
@@ -55,10 +56,10 @@ return packer.startup(function(use)
   }
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
-  use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
+  use { "akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
     require("toggleterm").setup()
-  end}
-  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+  end }
+  use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
@@ -71,6 +72,13 @@ return packer.startup(function(use)
   use 'folke/tokyonight.nvim'
   use "lunarvim/darkplus.nvim"
   use 'rockerBOO/boo-colorscheme-nvim'
+  use 'shaunsingh/nord.nvim'
+  use 'overcache/NeoSolarized'
+  use 'kyazdani42/blue-moon'
+  use 'rktjmp/lush.nvim'
+  use 'RishabhRD/gruvy'
+  use "rebelot/kanagawa.nvim"
+  use "phha/zenburn.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -90,6 +98,8 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
+  -- prettier
+  use 'sbdchd/neoformat'
   -- Telescope
   use "nvim-telescope/telescope.nvim"
 
@@ -100,6 +110,7 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
+  use "github/copilot.vim"
   -- Git
   use "lewis6991/gitsigns.nvim"
 
