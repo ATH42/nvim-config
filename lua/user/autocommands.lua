@@ -4,11 +4,7 @@ vim.cmd [[
     autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR> 
     autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200}) 
     autocmd BufWinEnter * :set formatoptions-=cro
-    let g:neoformat_try_node_exe = 1
-    autocmd BufWritePre *.tsx Neoformat
-    autocmd BufWritePre *.ts Neoformat
     autocmd FileType qf set nobuflisted
-    let g:nvim_tree_follow = 1
   augroup end
 
   augroup _git
@@ -33,8 +29,10 @@ vim.cmd [[
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
 
-  augroup _lsp
-   autocmd!
+augroup _lsp
+  autocmd!
    autocmd BufWritePre * lua vim.lsp.buf.formatting()
   augroup end
-]]
+
+  ]]
+ 

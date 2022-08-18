@@ -54,18 +54,18 @@ return packer.startup(function(use)
     },
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
-  use "moll/vim-bbye"
-  use "nvim-lualine/lualine.nvim"
-  use { "akinsho/toggleterm.nvim", tag = 'v1.*', config = function()
+  use "moll/vim-bbye" -- closes buffers without closing window
+  use "nvim-lualine/lualine.nvim" -- bufferline
+  use { "akinsho/toggleterm.nvim", tag = 'v1.*', config = function() -- toggles multiple terminals
     require("toggleterm").setup()
   end }
   use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
-  use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
+  use "ahmedkhalf/project.nvim" -- look through frecent projects
+  use "lewis6991/impatient.nvim" -- faster vim
   use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
+  use "goolord/alpha-nvim" -- startup dashboard
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  use "folke/which-key.nvim"
+  use "folke/which-key.nvim" -- popup help for keymaps
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -100,6 +100,7 @@ return packer.startup(function(use)
 
   -- prettier
   use 'sbdchd/neoformat'
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
 

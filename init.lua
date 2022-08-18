@@ -20,3 +20,9 @@ require "user.alpha"
 require "user.whichkey"
 require "user.autocommands"
 require "user.copilot"
+
+vim.cmd [[
+  set guifont=Iosevka\ Nerd\ Font\ Mono:h18
+  let g:neovide_transparency=0.8
+  let g:neovide_cursor_vfx_mode = "sonicboom"
+]]

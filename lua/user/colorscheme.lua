@@ -1,6 +1,7 @@
 vim.cmd [[
 try
-  colorscheme tokyonight
+  set termguicolors
+  colorscheme NeoSolarized
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark
