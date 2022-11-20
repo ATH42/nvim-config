@@ -48,7 +48,7 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use {
-    'kyazdani42/nvim-tree.lua', commit  = "ce463a5",
+    'kyazdani42/nvim-tree.lua', commit = "ce463a5",
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
@@ -79,7 +79,15 @@ return packer.startup(function(use)
   use 'RishabhRD/gruvy'
   use "rebelot/kanagawa.nvim"
   use "phha/zenburn.nvim"
-
+  --[[ use { ]]
+  --[[   "catppuccin/nvim", ]]
+  --[[   as = "catppuccin", ]]
+  --[[   config = function() ]]
+  --[[     vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha ]]
+  --[[     require("catppuccin").setup() ]]
+  --[[     vim.api.nvim_command "colorscheme catppuccin" ]]
+  --[[   end ]]
+  --[[ } ]]
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
