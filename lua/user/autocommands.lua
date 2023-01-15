@@ -1,4 +1,4 @@
-vim.cmd [[
+vim.cmd([[
   augroup _general_settings
     autocmd!
     autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR> 
@@ -27,11 +27,15 @@ vim.cmd [[
   augroup _alpha
     autocmd!
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
-  augroup end
-]]
+  augroup endaugroup _lsp
+  autocmd!
+  autocmd BufWritePre * lua vim.lsp.buf.formatting()
+ augroup end
+  
+augroup fmt
+  autocmd!
+  autocmd BufWritePre Neoformat
+ augroup END
+]])
 
 -- Autoformat
--- augroup _lsp
---   autocmd!
---   autocmd BufWritePre * lua vim.lsp.buf.formatting()
--- augroup end
